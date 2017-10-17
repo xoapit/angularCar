@@ -1,0 +1,35 @@
+$base-font-size: 1.2em;
+
+.header__container {
+  * {
+    color: #fff;
+  }
+
+  .ant-layout-header, .ant-menu{
+    background: #202A36;
+  }
+  .logo {
+    width: 100px;
+    float: left;
+    padding: 8px;
+  }
+  .icon {
+    position: relative;
+    top: 5px;
+  }
+
+  ul > li {
+    font-size: $base-font-size;
+  }
+  ul > li > ul > li{
+    font-size: $base-font-size - 0.4em;
+  }
+  .header__rightmenu{
+    float: right;
+    font-size: $base-font-size;
+    .header__rightmenu__highlightmenu{
+      line-height: 20px;
+      float: right;
+    }
+  }
+}
