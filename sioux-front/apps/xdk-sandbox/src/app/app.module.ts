@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { TokenInterceptor } from './core/net/token/token.interceptor';
 import {ArticleService} from "./core/services/article/article.service";
+import {PetService} from "./core/services/pet/pet.service";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, `assets/i18n/`, '.json');
@@ -50,6 +51,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
   bootstrap: [AppComponent],
   providers: [
     HttpClient,
+    PetService,
     ArticleService,
     { provide: LOCALE_ID, useValue: 'vi' },
     // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},

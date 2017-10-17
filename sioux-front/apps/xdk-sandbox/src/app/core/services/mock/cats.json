@@ -1,0 +1,17 @@
+[
+  {
+    "id":1,
+    "name":"Angualr",
+    "gender":"male"
+  },
+  {
+    "id":2,
+    "name":"Boots",
+    "gender":"male"
+  },
+  {
+    "id":3,
+    "name":"Goods",
+    "gender":"female"
+  }
+]

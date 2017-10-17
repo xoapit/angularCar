@@ -6,3 +6,18 @@
 </div>
 <p>{{ someProperty }}</p>
 <p>{{ userResponse }}</p>
+
+<ul class="users">
+  <li *ngFor="let eachUser of users"
+      [class.selected]="eachUser===selectedUser"
+      (click)="onselect(eachUser)">
+    <span class="badge">{{eachUser.id}}</span>{{eachUser.name}}
+  </li>
+</ul>
+
+<ul class="users">
+  <li *ngFor="let pet of pets">
+    Pet
+    <span class="badge">{{pet.id}}</span>{{pet.name}}
+  </li>
+</ul>
