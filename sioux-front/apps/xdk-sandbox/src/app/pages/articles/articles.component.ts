@@ -6,7 +6,72 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
+  Title = 'Angular';
+  courses: any=[
+    {
+      "name": "MyCourse",
+      "description": "MyCourse",
+      "status": "Available",
+      "modules": [],
+      "assignments": [],
+      "students": [
+        {
+          "user": {
+            "login": "Student",
+            "email": "siouxsmarteducation1@gmail.com",
+            "familyName": "Tom",
+            "givenName": "Hank",
+            "gender": "Male",
+            "role": "Student",
+            "id": "c2889fc5-599a-48ef-94ba-9500a3cfd4ab"
+          },
+          "id": "12c7409b-a037-46e4-9a9d-9d61ec60937f"
+        }
+      ],
+      "id": "12c7409b-a037-46e4-9a9d-9d6aec60937f"
+    },
+    {
+      "name": "MyCourse2",
+      "description": "MyCourse2",
+      "status": "Available",
+      "modules": [],
+      "assignments": [],
+      "students": [
+        {
+          "user": {
+            "login": "Student2",
+            "email": "siouxsmarteducation1@gmail.com",
+            "familyName": "Tom2",
+            "givenName": "Hank2",
+            "gender": "Male",
+            "role": "Student",
+            "id": "c2889fc5-599a-48ef-94ba-9500a3cfd4ab"
+          },
+          "id": "12c7409b-a037-46e4-9a9d-9d61ec60937f"
+        }
+      ],
+      "id": "12c7409b-a037-46e4-9a9d-9d6aec60937f"
+    }
+  ];
+
+  myCourse: Course;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.myCourse= new Course();
+    // this.myCourse.name='English';
+    // this.myCourse.description='English description';
+    // this.myCourse.status='Available';
+  }
+
+  createCourse(Course){
+    this.myCourse.status='Available';
+  }
+}
+
+export class Course{
+  name: string;
+  description: string;
+  status: string;
+  id:string;
 }

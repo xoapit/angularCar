@@ -1,3 +1,44 @@
 <p>
   articles works! awesome
 </p>
+
+<label>Title</label>
+<label>{{Title}}</label>
+<input [(ngModel)]="Title" placeholder="Enter something">
+<a class="btn btn-danger" routerLink="/home" routerLinkActive="active" >Create</a>
+<table class="table table-border table-hover table-responsive">
+  <thead>
+  <tr>
+    <th>Index</th>
+    <th>Title</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="courses">
+  <tr *ngFor="let eachCourse of courses; let i = index;">
+    <td>{{i+1}}</td>
+    <td>{{eachCourse.description}}</td>
+    <td>{{eachCourse.name}}</td>
+    <td>{{eachCourse.status}}</td>
+    <td>
+      <a routerLink="/Detail" class="btn btn-danger" type="button">Detail</a>
+      <button class="btn btn-danger" type="button">Edit</button>
+      <button class="btn btn-danger" type="button">Delete</button>
+      <button class="btn btn-danger" type="button">Block</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<label>Available: {{myCourse?.status}}</label>
+<label>Description: {{myCourse?.description}}</label>
+<label>Name: {{myCourse?.name}}</label>
+
+<div>
+  <input [(ngModel)]="Title" placeholder="Enter something">
+  <input [(ngModel)]="myCourse.name" placeholder="Enter course name">
+  <!--<input [(ngModel)]="myCourse.description" placeholder="Enter description">-->
+  <button class="btn btn-danger" type="button" (click)="createCourse(myCourse)">Add</button>
+</div>
