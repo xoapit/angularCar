@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-articles',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
   Title = 'Angular';
+  Title2 = 'Angular';
+
   courses: any=[
     {
       "name": "MyCourse",
@@ -55,7 +58,15 @@ export class ArticlesComponent implements OnInit {
   ];
 
   myCourse: Course;
-  constructor() {}
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParams.subscribe(params=>{
+       const date = params['date'];
+       this.myCourse= new Course();
+       this.Title2=date;
+    });
+  }
+
+  // constructor(){}
 
   ngOnInit() {
     this.myCourse= new Course();
@@ -66,6 +77,7 @@ export class ArticlesComponent implements OnInit {
 
   createCourse(Course){
     this.myCourse.status='Available';
+
   }
 }
 
