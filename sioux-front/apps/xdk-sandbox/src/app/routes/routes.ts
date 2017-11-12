@@ -12,7 +12,7 @@ export const routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'articles', component: ArticlesComponent },
-      { path: 'article/:uri', component: SingleArticleComponent },
+      { path: 'article/:id', component: SingleArticleComponent },
       { path: 'contact', component: ContactComponent }
       // { path: 'register', component: RegisterComponent, data: { translate: 'register' } },
       // { path: 'login', component: LoginComponent, data: { title: 'login' } },

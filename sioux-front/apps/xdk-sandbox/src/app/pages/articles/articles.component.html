@@ -25,7 +25,7 @@
     <td>{{eachCourse.name}}</td>
     <td>{{eachCourse.status}}</td>
     <td>
-      <a routerLink="/Detail" class="btn btn-danger" type="button">Detail</a>
+      <a [routerLink]="['/article/',eachCourse.id]" class="btn btn-danger" type="button">Detail</a>
       <button class="btn btn-danger" type="button">Edit</button>
       <button class="btn btn-danger" type="button">Delete</button>
       <button class="btn btn-danger" type="button">Block</button>
@@ -39,8 +39,15 @@
 <label>Name: {{myCourse?.name}}</label>
 
 <div>
-  <input [(ngModel)]="Title" placeholder="Enter something">
+  <div>
+  <input [(ngModel)]="Title" required placeholder="Enter something">
   <input [(ngModel)]="myCourse.name" placeholder="Enter course name">
   <!--<input [(ngModel)]="myCourse.description" placeholder="Enter description">-->
   <button class="btn btn-danger" type="button" (click)="createCourse(myCourse)">Add</button>
+  </div>
 </div>
+
+
+
+
+

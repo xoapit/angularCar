@@ -10,8 +10,11 @@ import { Article } from '@sioux-front/interfaces/Article';
   styleUrls: ['./single-article.component.css']
 })
 export class SingleArticleComponent implements OnInit {
+  title: string;
   @Input() article: Article;
-  constructor(private newsService: NewsService, private route: ActivatedRoute) {}
+  constructor(private newsService: NewsService, private route: ActivatedRoute) {
+    this.title= this.route.snapshot.params['id'];
+  }
 
   ngOnInit() {
     this.route.paramMap

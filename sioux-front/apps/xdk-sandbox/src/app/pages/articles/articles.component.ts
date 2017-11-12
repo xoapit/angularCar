@@ -8,51 +8,19 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ArticlesComponent implements OnInit {
   Title = 'Angular';
-  Title2 = 'Angular';
+  Title2 = '123';
 
-  courses: any=[
+  courses: Course[]=[
     {
       "name": "MyCourse",
       "description": "MyCourse",
       "status": "Available",
-      "modules": [],
-      "assignments": [],
-      "students": [
-        {
-          "user": {
-            "login": "Student",
-            "email": "siouxsmarteducation1@gmail.com",
-            "familyName": "Tom",
-            "givenName": "Hank",
-            "gender": "Male",
-            "role": "Student",
-            "id": "c2889fc5-599a-48ef-94ba-9500a3cfd4ab"
-          },
-          "id": "12c7409b-a037-46e4-9a9d-9d61ec60937f"
-        }
-      ],
       "id": "12c7409b-a037-46e4-9a9d-9d6aec60937f"
     },
     {
       "name": "MyCourse2",
       "description": "MyCourse2",
       "status": "Available",
-      "modules": [],
-      "assignments": [],
-      "students": [
-        {
-          "user": {
-            "login": "Student2",
-            "email": "siouxsmarteducation1@gmail.com",
-            "familyName": "Tom2",
-            "givenName": "Hank2",
-            "gender": "Male",
-            "role": "Student",
-            "id": "c2889fc5-599a-48ef-94ba-9500a3cfd4ab"
-          },
-          "id": "12c7409b-a037-46e4-9a9d-9d61ec60937f"
-        }
-      ],
       "id": "12c7409b-a037-46e4-9a9d-9d6aec60937f"
     }
   ];
@@ -60,7 +28,7 @@ export class ArticlesComponent implements OnInit {
   myCourse: Course;
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.queryParams.subscribe(params=>{
-       const date = params['date'];
+       const date = params['id'];
        this.myCourse= new Course();
        this.Title2=date;
     });
@@ -77,6 +45,13 @@ export class ArticlesComponent implements OnInit {
 
   createCourse(Course){
     this.myCourse.status='Available';
+    const course={
+      "name": "MyCourse2",
+      "description": "MyCourse2",
+      "status": "Available",
+      "id": "12c7409b-a037-46e4-9a9d-9d6aec60937f"
+    };
+    this.courses.push(course);
 
   }
 }
